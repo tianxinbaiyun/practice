@@ -1,0 +1,10 @@
+#clickhouse配置
+clickhouse:
+  host: "192.168.15.131"
+  database: "mysql_slow_log"
+  user: "default"
+  password: ""
+  port: 9000
+
+#开启调试
+debug: true

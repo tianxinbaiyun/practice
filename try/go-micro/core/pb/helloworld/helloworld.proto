@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package pb.helloworld;
+
+// 生成go文件命令：protoc --proto_path=. --micro_out=. --go_out=. helloworld/helloworld.proto
+//生成go文件命令：protoc --proto_path=. --micro_out=. --go_out=plugins=grpc:./ helloworld/helloworld.proto
+
+service HelloworldService {
+    rpc SayHello(HelloReq) returns (HelloRsp){}
+    rpc SayName(NameReq) returns (NameRsp){}
+
+}
+
+
+//客户端发送给服务端
+message  HelloReq{
+    string name = 1 ;
+}
+
+//服务端返回给客户端
+message HelloRsp{
+    string msg =1 ;
+}
+
+//客户端发送给服务端
+message NameReq{
+    string name = 1 ;
+
+}
+
+//服务端返回给客户端
+message NameRsp{
+    string msg =1 ;
+}

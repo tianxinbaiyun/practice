@@ -1,0 +1,45 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+func main3() {
+	type aa struct {
+		Key string `json:"key"`
+	}
+	a := &aa{}
+	a.Key = `MIIEowIBAAKCAQEAzd1VXrRMyLuaw7qtC0vAPxJSgLWKDt5Cb7jA+k7JpjkQRvJ6
+gITOb8pXe7N5OdnCttaMvV7J4xHmF+TkPjmk02qcaukkmQYSuDJsz0dtiYIf0BOH
+X6AHLcCqO//nbfyYUF1lc4P60mrzsdtoot/RABhiZ/orDfEMwSYnQU0lg0VSQyXD
+VZwnRvTZbvLntR7cJKViJKYloudhiuKU2tXQWa4xrHjFPDVAIORjIDPfIk6g35Vs
++ZZ6pYFx/qSWWVV0jtdFV5KEYBSiJnwRV2xXJYvkPkkY0p3o34DQIEwd45AEb9QL
+o56o4g0BYdn0lnKEw89CiMWc4chKGkrg0L8e3wIDAQABAoIBAFWIGTkg1ioscA/U
+VqMz1OsflLGvO24UACxk6aDV7Ugnu1CO3EDbbN3bht95YOudQx4uJAlmAaFbRWs2
+CXKlBotkZxqwRSli8ZIgOT8hoSwZqVgNVRhw56qlutT07NWwtiPlugn1kter4hZK
+X74UGcTdXL1wnkTLmw4A6Rxjjitseg8LA8mlysHPdjdpYZ+KgJXM3Hy97tjk7Bdi
+zJ/OEmufMluRd0BE4dQRqEeLrVo/iyDKent4jhNhpuxYMTf2QpfziaIBmIHN2Jcb
+tjiNv+9mMB/q3fwpV+bDnoMh15ldupH0SfBvPE0FKBeS8qKuuPvQ9ls2uf6M/Jfw
+5pAnwPkCgYEA5cPL2EKDYKhcx2MaGNJdrNDtAOYvsK4jiOQclZGcUWwMgtwq744B
+iP7C7OvkJvDzTpbjrm9btQKraXhQov3CH1ScmRKXz2r4G7a5312eqoAoCn/LHGqc
+yfwNuhNr1TwifUMZX85RjXgK7wYbdDWPtabbKHKhx8uyhqYnTDfTVUsCgYEA5V7q
+H6417UYX59yimO4N6UpmHw85c+xth2+y9WYs556YQMv2S/nFnrx74mnVnKCqN6B7
+aLiqF8eZdHwlDxAtr3twPRHoK9ROMNpaSLm7F4rd17ZcFY4/YN5u/AAa7zQycE2i
++G6J3RZptL9uMJlInT2/TzudUdhCZGcagMcn5D0CgYEAzfBZ5ENxqBAf4KLmADuF
+tOEqnPS06CKdPRRgvnrd5mj3Kc+XOFJK8/SM2HhybajoG5fJCU9Mnoh/BTDO7diO
+xzA6kEUHBuV07rowDZHHJkFqIkb60USJtc0SrKa9r0mQDEA5HRM7K5beDfGmZ9me
+Lo4Yvz9H3GGqaV/Bt2IOLNMCgYATa7btGcYNIgsyIZdO1ZEt+JOu+44Ex7b6abXA
+W3df4SjJC7v98NcPuqvOnuFsUpo2/YqVclVMkCTpHP3SSa9klVIKibKby20Xa9WL
+JNa3hpWEBzfCx3mMTSkegy/EoynGInyzBkD8DELFABRnXwMr9Sd2oPiQDnyIncY7
+syEojQKBgCgRgAe7XKLzZbBChvjEjbccPoA7kcw2lTAalSpH2G9QbGZLY5Ee5cDx
+/7OFEVQloGmFKE87a6K1TFRhoyNPjGX1lPxTeybU5WuOYRo8yNmlmk/cwdMmLrA4
+zck4QdznxkDsRjwGQkjTiskdwZG5ODHFXPVplGTJThE3/UlQE0Zz`
+
+	byte, err := json.Marshal(a)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(string(byte))
+}

@@ -1,0 +1,11 @@
+#influxdb配置
+influxdb:
+  host: "192.168.15.131"
+  database: "github.com/tianxinbaiyun/practice"
+  user: "admin"
+  password: "admin"
+  port: 18086
+  charset: "utf8"
+
+#开启调试
+debug: true

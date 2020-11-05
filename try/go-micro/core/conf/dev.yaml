@@ -1,0 +1,41 @@
+#Msql配置
+mysql:
+  #主库study
+  def_master:
+    host: "192.168.15.131"
+    database: "study"
+    user: "root"
+    password: "123456"
+    port: 3306
+    charset: "utf8"
+  #从库study
+  def_slaves:
+    - {
+      host: "192.168.15.131",
+      database: "study",
+      user: "root",
+      password: "123456",
+      port: 3306,
+      charset: "utf8"
+    }
+
+  max_idle_conns: 5
+  max_open_conns: 10
+
+#开启调试
+debug: true
+
+#注册服务到consul
+reg_consul: false
+
+#consul服务地址
+consuls:
+  - "192.168.15.131:8500"
+
+reg_etcd: true
+
+etcd:
+  - "192.168.15.131:2379"
+
+register_ttl: 20 #服务注册有效期，单位秒
+register_interval : 10 #每隔多少秒重新注册，单位秒

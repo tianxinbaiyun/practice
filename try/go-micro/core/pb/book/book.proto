@@ -1,0 +1,211 @@
+syntax = "proto3";
+
+package pb.book;
+
+// 生成go文件命令：protoc --proto_path=. --micro_out=. --go_out=. book/book.proto
+
+service BookService {
+    rpc BookList(Book) returns (BookListRsp){} //学佛列表
+    rpc BookInfo(Book) returns (BookInfoRsp){} //学佛详情
+    rpc BookStore(Book) returns (CommonRsp){} //添加学佛内容
+    rpc BookUpdate(Book) returns (CommonRsp){} //修改学佛内容
+    rpc BookDelete(Book) returns (CommonRsp){} //删除学佛内容
+
+}
+
+message StatisBook {
+    uint32 total_num = 1;
+    uint32 today_num = 2;
+    uint32 ranking = 3;
+    repeated TopUser50 top_50 = 4;
+    uint32 frequency_num = 5;
+    uint32 user_num = 6;
+}
+
+message StatisBookRsp {
+    StatisBook info = 1;
+}
+message TopUser50 {
+    uint32 user_id = 1;
+    uint32 total_num = 2;
+    string user_name = 3;
+}
+
+message BookCatesListReq {
+    bool show_learn_num = 1;//是否展示分类下的学习人数
+    uint32 temple_id = 2;
+    string platform = 10;
+}
+
+message BookCatesListRsp {
+    repeated BookCates data = 1;
+}
+
+//分类结构体
+message BookCates {
+    uint32 id = 1;
+    string name = 2;
+    uint32 sub_cate = 3;
+    uint32 sort = 4;
+    uint32 learn_num = 5;
+}
+
+//子分类结构体
+message BookSubCates {
+    uint32 id = 1;
+    string name = 2;
+    uint32 cate_id = 3;
+    uint32 temple_id = 4;
+    string created_at = 5;
+    uint32 b_type = 6;
+    uint32 limit = 7;//每页显示条数
+    uint32 offset = 8;//当前页数
+    repeated Book book = 9;
+    string platform = 10;
+}
+
+message BookSubCatesListReq{
+    BookSubCates BookSubCates =1;
+    repeated uint32 ids =2;
+}
+
+message BookSubCatesListRsp {
+    int64 total = 1; //总条数
+    repeated BookSubCates data = 2;
+}
+
+
+//公用返回响应体
+message CommonRsp {
+    bool ok = 1; //状态
+    string msg = 2; //文本描述
+    uint32 id = 3;
+}
+
+
+
+//学佛列表响应
+message BookListRsp {
+    int64 total = 1; //总条数
+    repeated Book data = 2;////数据列表
+}
+
+//学佛内容结构体
+message Book {
+    uint32 id = 1;
+    string title = 2;
+    uint32 cate_id = 3;
+    uint32 sub_cate_id = 4;
+    uint32 storage = 5;
+    string video = 6;
+    uint32 audio = 7;
+    uint32 book_file= 8;
+    string subject = 9;
+    string content = 10;
+    int32 is_pulish = 11;
+    uint32 hits = 12;
+    uint32 temple_id = 13;
+    uint32 user_id = 14;
+    string author = 15;
+    string created_at = 16;
+    string updated_at = 17;
+    uint32 limit = 18;//每页显示条数
+    uint32 offset = 19;//当前页数
+    bool has_collect = 20;//是否收藏
+    BookCollections collect = 21;//收藏的信息
+    string platform = 22;
+    uint32 flag = 23;
+}
+
+message Users {
+    uint32 id = 1;
+    string name = 2;
+    string phone = 3;
+}
+
+//经书收藏
+message BookCollections {
+    uint32 user_id = 1;
+    uint32 temple_id = 2;
+    uint32 book_id = 3;
+    uint32 frequency = 4;
+    uint32 completion_ratio = 5;
+    uint32 total_num = 6;
+    uint32 status = 7;
+    string created_at = 8;
+}
+
+//抄经记录
+message BookRecord {
+    uint32 id = 1;
+    uint32 book_id = 2;
+    uint32 user_id = 3;
+    uint32 temple_id = 4;
+    uint32 total_num = 5;
+    string created_at = 6;
+    string book_name = 7;
+    Page page = 8;
+}
+
+message BookRecordListRsp {
+    int64 total = 1; //总条数
+    repeated BookRecord data = 2;////数据列表
+}
+
+message Page {
+    uint32 limit = 1;//每页显示条数
+    uint32 offset = 2;//当前页数
+}
+message BookInfoRsp {
+    bool ok = 1; //状态
+    string msg = 2; //文本描述
+    Book info = 3;
+}
+
+
+message BookRecordExt {
+    BookRecord book_record = 1;
+    Users user = 2;
+}
+
+message BookRecordInfoRsp {
+    BookRecordExt info = 1;
+}
+
+
+//抄经完成记录
+message BookCompleteRecord {
+    uint32 id = 1;
+    uint32 book_id = 2;
+    uint32 user_id = 3;
+    uint32 temple_id = 4;
+    uint32 image = 5;
+    string created_at = 6;
+    string book_name = 7;
+}
+
+message BookCompleteRecordListReq {
+    BookCompleteRecord BookCompleteRecord = 1;
+    Page Page  = 2;
+}
+
+message BookCompleteRecordExt {
+    BookCompleteRecord BookCompleteRecord = 1;
+    Users Users = 2;
+}
+
+message BookCompleteRecordListRsp {
+    int64 total = 1;
+    repeated BookCompleteRecord data = 2;
+}
+
+
+message BookCompleteRecordInfoRsp {
+    BookCompleteRecordExt info = 1;
+}
+
+message BookSyncReq {
+    repeated uint32 temlpe_ids = 1;
+    uint32 source_temple_id = 2;
+    uint32 is_sync_public = 3;
+}
