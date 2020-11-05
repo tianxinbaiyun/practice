@@ -18,10 +18,10 @@ func main() {
 func fourSum(nums []int, target int) [][]int {
 	sort.Ints(nums)
 	var (
-		numLen int = len(nums)
-		left   int = numLen - 1
-		right  int = numLen - 1
-		sum    int = 0
+		numLen = len(nums)
+		left   = numLen - 1
+		right  = numLen - 1
+		sum    int
 		res    [][]int
 	)
 	res = make([][]int, 0)

@@ -11,10 +11,10 @@ func main() {
 }
 func maxArea(height []int) int {
 	var (
-		res   int = 0
-		left  int = 0
-		right int = len(height) - 1
-		area  int = 0
+		res   int
+		left  int
+		right = len(height) - 1
+		area  int
 	)
 	for left < right {
 		if height[left] < height[right] {
@@ -32,10 +32,10 @@ func maxArea(height []int) int {
 }
 func maxArea2(height []int) int {
 	var (
-		res   int = 0
-		inLen int = len(height)
-		min   int = 0
-		area  int = 0
+		res   int
+		inLen = len(height)
+		min   int
+		area  int
 	)
 	for k, v := range height {
 		if v*(inLen-k) < res {

@@ -44,9 +44,9 @@ func Recursion(n int) int {
 
 func cal(n int) int {
 	var (
-		result int = 0
-		pre    int = 0
-		pre2   int = 0
+		result int
+		pre    int
+		pre2   int
 	)
 	if n <= 2 {
 		return 1

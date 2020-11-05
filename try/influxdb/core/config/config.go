@@ -10,13 +10,16 @@ import (
 	"os"
 )
 
+//Cfg Cfg
 var Cfg Config
 
+// Config Config
 type Config struct {
 	Influxdb Influxdb `yaml:"influxdb"`
 	Debug    bool     `yaml:"debug"`
 }
 
+// Influxdb Influxdb
 type Influxdb struct {
 	Host     string `yaml:"host"`
 	Database string `yaml:"database"`

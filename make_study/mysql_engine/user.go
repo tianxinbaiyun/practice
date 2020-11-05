@@ -65,7 +65,7 @@ func InsertUserData(n int) {
 	return
 }
 
-//增
+// InsertUser 增
 func InsertUser(name string, balance float64) (int64, bool) {
 	user := new(User)
 	user.Name = name
@@ -77,13 +77,13 @@ func InsertUser(name string, balance float64) (int64, bool) {
 	return affected, true
 }
 
-//删
+//DelUser 删
 func DelUser(id int64) {
 	user := new(User)
 	x.ID(id).Delete(user)
 }
 
-//改
+// UpdateUser 改
 func UpdateUser(id int64, user *User) bool {
 	affected, err := x.ID(id).Update(user)
 	if err != nil {
@@ -95,7 +95,7 @@ func UpdateUser(id int64, user *User) bool {
 	return true
 }
 
-//查
+//GetUserinfo 查
 func GetUserinfo(id int64) *User {
 	user := &User{UserID: id}
 	is, _ := x.Get(user)

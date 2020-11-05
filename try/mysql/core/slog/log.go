@@ -41,7 +41,8 @@ func NewLog(level string, console bool, buf int) (*Logger, error) {
 				}
 			}()
 		} else {
-			return nil, errors.New("can't write.")
+			err := errors.New("can't write")
+			return nil, err
 		}
 	}
 
@@ -54,9 +55,11 @@ func NewLog(level string, console bool, buf int) (*Logger, error) {
 		log.info = true
 		return log, nil
 	}
-	return nil, errors.New("level must be Warn or Info.")
+	err := errors.New("level must be Warn or Info")
+	return nil, err
 }
 
+// Fatal Fatal
 func Fatal(info ...interface{}) {
 	if log.console {
 		fmt.Println("Fatal", log.tformat(), info)
@@ -76,6 +79,8 @@ func Error(info ...interface{}) {
 		log.file <- fmt.Sprintln("Error", log.tformat(), info)
 	}
 }
+
+// ErrorDB ErrorDB
 func ErrorDB(info ...interface{}) {
 	if log.console {
 		fmt.Println("Error", log.tformat(), info)
@@ -85,6 +90,7 @@ func ErrorDB(info ...interface{}) {
 	}
 }
 
+// Warn Warn
 func Warn(info ...interface{}) {
 	if log.warn && log.console {
 		fmt.Println("Warn", log.tformat(), info)
@@ -93,6 +99,8 @@ func Warn(info ...interface{}) {
 		log.file <- fmt.Sprintln("Warn", log.tformat(), info)
 	}
 }
+
+// Info Info
 func Info(info ...interface{}) {
 	if log.info && log.console {
 		fmt.Println("Info", log.tformat(), info)
@@ -101,6 +109,8 @@ func Info(info ...interface{}) {
 		log.file <- fmt.Sprintln("Info", log.tformat(), info)
 	}
 }
+
+// Close Close
 func Close() {
 	for len(log.file) > 0 {
 		time.Sleep(1e8)

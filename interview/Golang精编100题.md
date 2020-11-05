@@ -1417,9 +1417,9 @@ import (
 )
 
 func main() {
-	defer_call()
+	deferCall()
 }
-func defer_call() {
+func deferCall() {
 	defer func() { fmt.Println("打印前") }()
 	defer func() { fmt.Println("打印中") }()
 	defer func() { fmt.Println("打印后") }()

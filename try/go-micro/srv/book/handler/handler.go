@@ -6,13 +6,16 @@ import (
 	"github.com/tianxinbaiyun/practice/try/go-micro/srv/book/db"
 )
 
-type bookServiceHandler struct{}
+// BookServiceHandler BookServiceHandler
+type BookServiceHandler struct{}
 
-func NewBookService() *bookServiceHandler {
-	return &bookServiceHandler{}
+// NewBookService NewBookService
+func NewBookService() (h *BookServiceHandler) {
+	return &BookServiceHandler{}
 }
 
-func (b *bookServiceHandler) BookList(ctx context.Context, req *pb_book.Book, rsp *pb_book.BookListRsp) error {
+// BookList BookList
+func (b *BookServiceHandler) BookList(ctx context.Context, req *pb_book.Book, rsp *pb_book.BookListRsp) error {
 	list, total, err := db.BookList(req)
 	if err != nil {
 		return err
@@ -24,7 +27,8 @@ func (b *bookServiceHandler) BookList(ctx context.Context, req *pb_book.Book, rs
 	return nil
 }
 
-func (b *bookServiceHandler) BookInfo(ctx context.Context, req *pb_book.Book, rsp *pb_book.BookInfoRsp) error {
+// BookInfo BookInfo
+func (b *BookServiceHandler) BookInfo(ctx context.Context, req *pb_book.Book, rsp *pb_book.BookInfoRsp) error {
 	info, err := db.BooInfo(req)
 	if err != nil {
 		return err
@@ -33,7 +37,8 @@ func (b *bookServiceHandler) BookInfo(ctx context.Context, req *pb_book.Book, rs
 	return nil
 }
 
-func (b *bookServiceHandler) BookUpdate(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
+// BookUpdate BookUpdate
+func (b *BookServiceHandler) BookUpdate(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
 	exist, err := db.BookExist(req.ID)
 	if err != nil {
 		return err
@@ -50,7 +55,8 @@ func (b *bookServiceHandler) BookUpdate(ctx context.Context, req *pb_book.Book, 
 	return nil
 }
 
-func (b *bookServiceHandler) BookStore(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
+// BookStore BookStore
+func (b *BookServiceHandler) BookStore(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
 	err := db.BookStore(req)
 	if err != nil {
 		return err
@@ -59,7 +65,8 @@ func (b *bookServiceHandler) BookStore(ctx context.Context, req *pb_book.Book, r
 	return nil
 }
 
-func (b *bookServiceHandler) BookDelete(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
+// BookDelete BookDelete
+func (b *BookServiceHandler) BookDelete(ctx context.Context, req *pb_book.Book, rsp *pb_book.CommonRsp) error {
 	exist, err := db.BookExist(req.ID)
 	if err != nil {
 		return err

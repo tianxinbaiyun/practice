@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-//用户验证中间件
+// Auth 用户验证中间件
 func Auth(c *gin.Context) {
 	//
 	//bearer := c.GetHeader("Authorization")

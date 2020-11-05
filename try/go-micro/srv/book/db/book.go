@@ -7,6 +7,7 @@ import (
 	"github.com/tianxinbaiyun/practice/try/go-micro/srv/book/entity"
 )
 
+// BookList BookList
 func BookList(par *pb_book.Book) (list []*entity.Book, total int64, err error) {
 	list = make([]*entity.Book, 0)
 	q := db.Get().Table("book").Omit("content")
@@ -52,6 +53,7 @@ func BookList(par *pb_book.Book) (list []*entity.Book, total int64, err error) {
 	return
 }
 
+// BooInfo BooInfo
 func BooInfo(par *pb_book.Book) (info *entity.Book, err error) {
 	info = new(entity.Book)
 	q := db.Get().Table("book")
@@ -67,6 +69,7 @@ type masterName struct {
 	Name string
 }
 
+// BookStore BookStore
 func BookStore(par *pb_book.Book) error {
 	//获取法师的名称
 	master := new(masterName)
@@ -108,6 +111,7 @@ func BookStore(par *pb_book.Book) error {
 	return err
 }
 
+// BookUpdate BookUpdate
 func BookUpdate(par *pb_book.Book) error {
 	updateData := &entity.Book{
 		Title:     par.Title,
@@ -140,6 +144,7 @@ func BookUpdate(par *pb_book.Book) error {
 	return err
 }
 
+// BookDelete BookDelete
 func BookDelete(par *pb_book.Book) error {
 	q := db.Get().Table("book")
 	q.Where("id = ?", par.ID)
@@ -150,6 +155,7 @@ func BookDelete(par *pb_book.Book) error {
 	return err
 }
 
+// BookExist BookExist
 func BookExist(id uint32) (exist bool, err error) {
 	exist, err = db.Get().Table("book").Where("id = ?", id).Exist(&entity.Book{})
 	if err != nil {

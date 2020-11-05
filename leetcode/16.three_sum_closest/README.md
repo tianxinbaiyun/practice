@@ -44,7 +44,7 @@ func main() {
 func threeSumClosest(nums []int, target int) int {
 	sort.Ints(nums)
 	var (
-		res     int = 0
+		res     int
 		numsLen int = len(nums)
 	)
 	res = nums[0] + nums[1] + nums[2]

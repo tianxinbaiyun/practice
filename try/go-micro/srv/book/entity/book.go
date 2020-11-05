@@ -25,6 +25,7 @@ type Book struct {
 	HasCollect bool   `json:"has_collect" xorm:"-"`
 }
 
+// ToProto ToProto
 func (b *Book) ToProto() *pb_book.Book {
 	return &pb_book.Book{
 		ID:         b.ID,

@@ -16,7 +16,7 @@ func main() {
 }
 func reverse(x int) int {
 	var (
-		res int = 0
+		res int
 	)
 	if x < -1<<31 || x > 1<<31-1 {
 		return 0
@@ -27,8 +27,8 @@ func reverse(x int) int {
 
 func reverse2(x int) int {
 	var (
-		flag int = 1
-		res  int = 0
+		flag = 1
+		res  int
 		sb   strings.Builder
 	)
 	//2147483647

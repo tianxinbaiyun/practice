@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// t t
+// T t
 type T struct {
 	i int
 }

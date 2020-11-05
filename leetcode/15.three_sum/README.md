@@ -45,7 +45,7 @@ func threeSum(nums []int) [][]int {
 	var (
 		res     [][]int
 		numsLen     = len(nums)
-		left    int = 0
+		left    int
 		right   int = numsLen - 1
 	)
 	if numsLen < 3 {

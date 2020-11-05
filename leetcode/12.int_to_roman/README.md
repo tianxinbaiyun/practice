@@ -64,7 +64,7 @@ import (
 
 //整数转罗马数字
 func main() {
-	var input int = 0
+	var input int
 	input = 20
 	output := intToRoman(input)
 	fmt.Println(output)

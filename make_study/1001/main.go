@@ -5,10 +5,10 @@ import (
 )
 
 func main() {
-	defer_call()
+	deferCall()
 }
 
-func defer_call() {
+func deferCall() {
 
 	defer func() {
 		if err := recover(); err != nil {

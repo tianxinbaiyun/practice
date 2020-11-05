@@ -12,6 +12,7 @@ import (
 	"time"
 )
 
+// 服务名称
 var (
 	ServiceName = "book"
 )

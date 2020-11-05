@@ -9,17 +9,18 @@ import (
 
 var (
 	err   error
-	defDb *mainDB
+	defDb *MainDB
 )
 
-type mainDB struct {
+// MainDB MainDB
+type MainDB struct {
 	Conn client.Client
 	Bp   client.BatchPoints
 }
 
 // Init Init
 func Init() {
-	defDb = new(mainDB)
+	defDb = new(MainDB)
 	defDb.Conn, err = client.NewHTTPClient(client.HTTPConfig{
 		Addr:     fmt.Sprintf("%s:%s", config.Cfg.Influxdb.Host, config.Cfg.Influxdb.Port),
 		Username: config.Cfg.Influxdb.User,
@@ -43,7 +44,7 @@ func NewPersist(conf config.Config) (conn client.Client, err error) {
 }
 
 //Get 获取数据库示例
-func Get() *mainDB {
+func Get() *MainDB {
 	defDb.Bp, err = client.NewBatchPoints(client.BatchPointsConfig{
 		Database:  config.Cfg.Influxdb.Database,
 		Precision: "s",

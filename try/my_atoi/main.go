@@ -8,7 +8,7 @@ import (
 
 //请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 func main() {
-	var s string = ""
+	var s string
 	s = "  -11111111111111111111111419with words"
 	//s = "-2147483649"
 	s = "--5+"

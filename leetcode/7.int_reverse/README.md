@@ -37,7 +37,7 @@ import (
 
 
 func main() {
-	var x int = 0
+	var x int
 	x = 1534236469
 	fmt.Println(1 << 31)
 	fmt.Println(1e5)
@@ -46,7 +46,7 @@ func main() {
 }
 func reverse(x int) int {
 	var (
-		res int = 0
+		res int
 	)
 	if x < -1<<31 || x > 1<<31-1 {
 		return 0
@@ -58,7 +58,7 @@ func reverse(x int) int {
 func reverse2(x int) int {
 	var (
 		flag int = 1
-		res  int = 0
+		res  int
 		sb   strings.Builder
 	)
 	//2147483647

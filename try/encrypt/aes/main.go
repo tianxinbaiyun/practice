@@ -64,6 +64,7 @@ func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
 	return append(ciphertext, padtext...)
 }
 
+// AesDecrypt AesDecrypt
 func AesDecrypt(decodeStr string, key []byte) ([]byte, error) {
 	//先解密base64
 	decodeBytes, err := base64.StdEncoding.DecodeString(decodeStr)

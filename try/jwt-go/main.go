@@ -8,9 +8,9 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-// SIGN_NAME_SCERET
+// SignNameSceret
 var (
-	SIGN_NAME_SCERET = "aweQurt178BNI"
+	SignNameSceret = "aweQurt178BNI"
 )
 
 func main() {
@@ -48,7 +48,7 @@ func createJwt() (string, error) {
 	token.Claims = claims
 
 	// Sign and get the complete encoded token as a string using the secret
-	tokenString, err := token.SignedString([]byte(SIGN_NAME_SCERET))
+	tokenString, err := token.SignedString([]byte(SignNameSceret))
 	return tokenString, err
 }
 
@@ -61,7 +61,7 @@ func parseJwt(tokenString string) jwt.MapClaims {
 		}
 
 		// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
-		return []byte(SIGN_NAME_SCERET), nil
+		return []byte(SignNameSceret), nil
 	})
 
 	var claims jwt.MapClaims

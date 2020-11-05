@@ -70,7 +70,7 @@ func QueryDB(cli client.Client, cmd string) (res []client.Result, err error) {
 	return res, nil
 }
 
-//Insert
+//WritesPoints WritesPoints
 func WritesPoints(cli client.Client) {
 	bp, err := client.NewBatchPoints(client.BatchPointsConfig{
 		Database:  MyDB,

@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// Stu Stu
 type Stu struct {
 	Name string
 	Age  int

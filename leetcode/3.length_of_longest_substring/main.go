@@ -17,9 +17,9 @@ func main() {
 // lengthOfLongestSubstring
 func lengthOfLongestSubstring(s string) int {
 	var (
-		left   int    = 0
-		maxlen int    = 0
-		retstr string = ""
+		left   int
+		maxlen int
+		retstr string
 	)
 	for i := range s {
 		if index := strings.Index(retstr, s[i:i+1]); index > -1 {

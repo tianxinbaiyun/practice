@@ -53,7 +53,7 @@ func isPalindrome(x int) bool {
 
 	var (
 		temp int = x
-		val  int = 0
+		val  int
 	)
 	for x != 0 {
 		val = val*10 + x%10

@@ -12,6 +12,7 @@ func Delete(ch chan int) {
 
 }
 
+// Done Done
 func Done(ch chan int) {
 	j, b := <-ch
 	if b {
@@ -19,6 +20,7 @@ func Done(ch chan int) {
 	}
 }
 
+// Close Close
 func Close(ch chan int) {
 	close(ch)
 }

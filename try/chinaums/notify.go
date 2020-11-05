@@ -15,6 +15,8 @@ type ChinaumsNotyfyHeader struct {
 	Termid      string `json:"termid"`
 	RequestTime string `json:"request_time"`
 }
+
+// ChinaumsNotyfyBody ChinaumsNotyfyBody
 type ChinaumsNotyfyBody struct {
 	Orderno   string `json:"orderno"`
 	Cod       string `json:"cod"`
@@ -28,6 +30,8 @@ type ChinaumsNotyfyBody struct {
 	QueryID   string `json:"queryID"`
 	Memo      string `json:"memo"`
 }
+
+// ChinaumsNotyfyRsp ChinaumsNotyfyRsp
 type ChinaumsNotyfyRsp struct {
 	ChinaumsNotyfyHeader ChinaumsNotyfyHeader `json:"header"`
 	ChinaumsNotyfyBody   ChinaumsNotyfyBody   `json:"body"`

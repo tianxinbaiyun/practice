@@ -20,24 +20,24 @@ var (
 
 // 定义
 const (
-	MONGO_HOST = "127.0.0.1"
-	MONGO_PORT = "27017"
-	MONGO_DB   = "test"
-	MONGO_USER = "admin"
-	MONGO_PWD  = "123456"
+	MongoHost = "127.0.0.1"
+	MongoPort = "27017"
+	MongoDb   = "test"
+	MongoUser = "admin"
+	MongoPwd  = "123456"
 )
 
 func init() {
 	// 创建链接
-	Session, MgoError = mgo.Dial(fmt.Sprintf("%s:%s", MONGO_HOST, MONGO_PORT))
+	Session, MgoError = mgo.Dial(fmt.Sprintf("%s:%s", MongoHost, MongoPort))
 	if MgoError != nil {
 		fmt.Println("链接失败！")
 		os.Exit(1)
 	}
 	// 选择DB
-	Databases = Session.DB(MONGO_DB)
+	Databases = Session.DB(MongoDb)
 	// 登陆
-	MgoError = Databases.Login(MONGO_USER, MONGO_PWD)
+	MgoError = Databases.Login(MongoUser, MongoPwd)
 	if MgoError != nil {
 		fmt.Println("登陆验证失败！")
 		os.Exit(1)
@@ -45,6 +45,7 @@ func init() {
 	// defer Session.Close()
 }
 
+// Demos Demos
 func Demos() {
 	// 选择一个要操作的Collection
 	c := Databases.C("demo")

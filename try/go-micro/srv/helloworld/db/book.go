@@ -69,6 +69,7 @@ type masterName struct {
 	Name string
 }
 
+// BookStore BookStore
 func BookStore(par *pb_book.Book) error {
 	//获取法师的名称
 	master := new(masterName)
@@ -110,6 +111,7 @@ func BookStore(par *pb_book.Book) error {
 	return err
 }
 
+// BookUpdate BookUpdate
 func BookUpdate(par *pb_book.Book) error {
 	updateData := &entity.Book{
 		Title:     par.Title,
@@ -142,6 +144,7 @@ func BookUpdate(par *pb_book.Book) error {
 	return err
 }
 
+// BookDelete BookDelete
 func BookDelete(par *pb_book.Book) error {
 	q := db.Get().Table("book")
 	q.Where("id = ?", par.ID)
@@ -152,6 +155,7 @@ func BookDelete(par *pb_book.Book) error {
 	return err
 }
 
+// BookExist BookExist
 func BookExist(id uint32) (exist bool, err error) {
 	exist, err = db.Get().Table("book").Where("id = ?", id).Exist(&entity.Book{})
 	if err != nil {

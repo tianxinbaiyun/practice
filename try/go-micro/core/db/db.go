@@ -14,6 +14,7 @@ var (
 	redisPool *redis.Pool
 )
 
+// Init Init
 func Init() {
 
 	connGroup := make([]string, 0)
@@ -37,7 +38,7 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
-	defDB.SetMaxIDleConns(config.Cfg.Mysql.MaxIDleConns)
+	defDB.SetMaxIdleConns(config.Cfg.Mysql.MaxIDleConns)
 	defDB.SetMaxOpenConns(config.Cfg.Mysql.MaxOpenConns)
 	if config.Cfg.Debug {
 		defDB.ShowSQL(true)
@@ -72,9 +73,9 @@ func SessionCommit(se *xorm.Session) (err error) {
 func InitRedisPool() {
 	redisConf := config.Cfg.Redis
 	redisPool = &redis.Pool{
-		MaxIDle:     redisConf.RedisMaxIDle,
+		MaxIdle:     redisConf.RedisMaxIDle,
 		MaxActive:   redisConf.RedisMaxActive,
-		IDleTimeout: time.Duration(redisConf.RedisIDleTimeout) * time.Second,
+		IdleTimeout: time.Duration(redisConf.RedisIDleTimeout) * time.Second,
 		Dial: func() (redis.Conn, error) {
 			c, err := redis.Dial("tcp", redisConf.RedisAddr)
 			if err != nil {

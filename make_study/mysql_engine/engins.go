@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-//定义结构体(xorm支持双向映射)
+//LogsInnodb 定义结构体(xorm支持双向映射)
 type LogsInnodb struct {
 	Name      string `json:"name" xorm:"VARCHAR(255)"`
 	Time      int64  `json:"time" xorm:"updated BIGINT(20)"`
@@ -24,6 +24,7 @@ type LogsMyisam struct {
 	CreatTime int64  `json:"creat_time" xorm:"created BIGINT(20)"`
 }
 
+// LogsArchive LogsArchive
 type LogsArchive struct {
 	Name      string `json:"name" xorm:"VARCHAR(255)"`
 	Time      int64  `json:"time" xorm:"updated BIGINT(20)"`
@@ -69,6 +70,8 @@ func InsertLogsInnodbData(n int) {
 	}
 	return
 }
+
+// InsertLogsMyisamData InsertLogsMyisamData
 func InsertLogsMyisamData(n int) {
 	for i := 0; i < n; i++ {
 		u1 := uuid.Must(uuid.NewV4(), nil)
@@ -88,7 +91,7 @@ func InsertLogsArchiveData(n int) {
 	return
 }
 
-//增
+//InsertLogsInnodb 增
 func InsertLogsInnodb(name string, balance float64) (int64, bool) {
 	data := new(LogsInnodb)
 	data.Name = name
@@ -99,6 +102,7 @@ func InsertLogsInnodb(name string, balance float64) (int64, bool) {
 	return affected, true
 }
 
+// InsertLogsMyisam InsertLogsMyisam
 func InsertLogsMyisam(name string, balance float64) (int64, bool) {
 	data := new(LogsMyisam)
 	data.Name = name
@@ -109,6 +113,7 @@ func InsertLogsMyisam(name string, balance float64) (int64, bool) {
 	return affected, true
 }
 
+// InsertLogsArchive InsertLogsArchive
 func InsertLogsArchive(name string, balance float64) (int64, bool) {
 	data := new(LogsArchive)
 	data.Name = name

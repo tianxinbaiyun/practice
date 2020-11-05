@@ -86,7 +86,7 @@ func main2() {
 	return
 }
 
-//创建加密数据
+//CreateSignData 创建加密数据
 func CreateSignData(order *ChinaumsOrder) (err error) {
 	str, err := CreatePreSignString(order)
 	if err != nil {
@@ -108,6 +108,8 @@ func CreateSignData(order *ChinaumsOrder) (err error) {
 	order.Mac = sign
 	return
 }
+
+// SignSha256 SignSha256
 func SignSha256(preSign string) (sign string) {
 	//创建一个基于SHA256算法的hash.Hash接口的对象
 	hash := sha256.New()
@@ -120,12 +122,14 @@ func SignSha256(preSign string) (sign string) {
 	return
 }
 
+// SignMd5 SignMd5
 func SignMd5(preSign string) (sign string) {
 	h := md5.New()
 	h.Write([]byte(preSign))
 	return hex.EncodeToString(h.Sum(nil))
 }
 
+// SignSm3 SignSm3
 func SignSm3(preSign string) (sign string) {
 	hash := sm3.New()
 	hash.Write([]byte(preSign))
@@ -137,7 +141,7 @@ func SignSm3(preSign string) (sign string) {
 	return
 }
 
-//空值 和 下标是sign 去掉
+//CreatePreSignString 空值 和 下标是sign 去掉
 func CreatePreSignString(order *ChinaumsOrder) (str string, err error) {
 	b, err := json.Marshal(order)
 	if err != nil {

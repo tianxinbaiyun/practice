@@ -11,6 +11,7 @@ var (
 	defDB *xorm.EngineGroup
 )
 
+// Init Init
 func Init() {
 
 	connGroup := make([]string, 0)
@@ -34,7 +35,7 @@ func Init() {
 	if err != nil {
 		panic(err)
 	}
-	defDB.SetMaxIDleConns(config.Cfg.Mysql.MaxIDleConns)
+	defDB.SetMaxIdleConns(config.Cfg.Mysql.MaxIDleConns)
 	defDB.SetMaxOpenConns(config.Cfg.Mysql.MaxOpenConns)
 	if config.Cfg.Debug {
 		defDB.ShowSQL(true)
@@ -42,24 +43,24 @@ func Init() {
 
 }
 
-//获取rrf_plus数据库示例
+// Get 获取rrf_plus数据库示例
 func Get() *xorm.EngineGroup {
 	return defDB
 }
 
-// 开始事物
+// SessionBegin 开始事物
 func SessionBegin(se *xorm.Session) (err error) {
 	err = se.Begin()
 	return
 }
 
-// 回滚事物
+// SessionRollback 回滚事物
 func SessionRollback(se *xorm.Session) (err error) {
 	err = se.Rollback()
 	return
 }
 
-// 提交事物
+// SessionCommit 提交事物
 func SessionCommit(se *xorm.Session) (err error) {
 	err = se.Commit()
 	return

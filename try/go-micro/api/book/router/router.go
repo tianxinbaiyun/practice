@@ -10,6 +10,7 @@ var (
 	basePath string
 )
 
+// Init Init
 func Init(serviceName string) *gin.Engine {
 	basePath = serviceName
 	r = gin.New()

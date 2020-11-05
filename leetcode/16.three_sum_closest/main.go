@@ -21,8 +21,8 @@ func main() {
 func threeSumClosest(nums []int, target int) int {
 	sort.Ints(nums)
 	var (
-		res     int = 0
-		numsLen int = len(nums)
+		res     int
+		numsLen = len(nums)
 	)
 	res = nums[0] + nums[1] + nums[2]
 	for i := 0; i < numsLen-2; i++ {
@@ -71,10 +71,10 @@ func threeSumClosest2(nums []int, target int) int {
 	sort.Ints(nums)
 	//fmt.Println(nums)
 	var (
-		numsLen int = len(nums)
-		left    int = 0
-		right   int = numsLen - 1
-		res     int = 0
+		numsLen = len(nums)
+		left    int
+		right   = numsLen - 1
+		res     int
 	)
 	res = nums[0] + nums[1] + nums[2]
 

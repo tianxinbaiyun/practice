@@ -7,8 +7,8 @@ import (
 	"time"
 )
 
-// CpuUsagePerCpu CpuUsagePerCpu
-type CpuUsagePerCpu struct {
+// CPUUsagePerCPU CPUUsagePerCPU
+type CPUUsagePerCPU struct {
 	ID            int64     `json:"id"`
 	Time          time.Time `json:"time"`
 	ContainerName string    `json:"container_name"`
@@ -18,7 +18,7 @@ type CpuUsagePerCpu struct {
 }
 
 // Create Create
-func Create(par *CpuUsagePerCpu) (err error) {
+func Create(par *CPUUsagePerCPU) (err error) {
 	mainDb := db.Get()
 	tags := map[string]string{"container": "mysql"}
 	fields := map[string]interface{}{

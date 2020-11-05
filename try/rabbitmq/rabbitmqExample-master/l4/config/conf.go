@@ -9,5 +9,5 @@ const (
 
 // 定义
 var (
-	RoutingKeys [4]string = [4]string{"info", "debug", "warn", "error"}
+	RoutingKeys = [4]string{"info", "debug", "warn", "error"}
 )

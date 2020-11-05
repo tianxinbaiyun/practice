@@ -12,6 +12,7 @@ func main() {
 	AddUsers()
 }
 
+// AddUsers AddUsers
 func AddUsers() {
 	wg := sync.WaitGroup{}
 
@@ -20,7 +21,7 @@ func AddUsers() {
 		go func() {
 			defer wg.Done()
 			for j := 0; j < 1000; j++ {
-				uuid := util.CreateUuid()
+				uuid := util.CreateUUID()
 				_ = models.Create(&models.Users{
 					Name: uuid,
 					Age:  j % 100,

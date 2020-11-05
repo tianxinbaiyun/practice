@@ -15,15 +15,15 @@ type server struct{}
 //rpc
 //函数关键字（对象）函数名（客户端发送过来的内容 ， 返回给客户端的内容） 错误返回值
 
-//grpc
+// SayHellogrpc
 //函数关键字 （对象）函数名 （cotext，客户端发过来的参数 ）（发送给客户端的参数，错误）
-func (this *server) SayHello(ctx context.Context, in *pd.HelloReq) (out *pd.HelloRsp, err error) {
+func (c *server) SayHello(ctx context.Context, in *pd.HelloReq) (out *pd.HelloRsp, err error) {
 
 	return &pd.HelloRsp{Msg: "hello" + in.Name}, nil
 }
 
-//一个说名字的服务
-func (this *server) SayName(ctx context.Context, in *pd.NameReq) (out *pd.NameRsp, err error) {
+// SayName 一个说名字的服务
+func (c *server) SayName(ctx context.Context, in *pd.NameReq) (out *pd.NameRsp, err error) {
 
 	return &pd.NameRsp{Msg: in.Name + "早上好"}, nil
 }

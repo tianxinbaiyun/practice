@@ -10,13 +10,16 @@ import (
 	"os"
 )
 
+// Cfg Cfg
 var Cfg Config
 
+// Config Config
 type Config struct {
 	Mysql Mysql `yaml:"mysql"`
 	Debug bool  `yaml:"debug"`
 }
 
+// Mysql Mysql
 type Mysql struct {
 	DefMaster    MysqlBase   `yaml:"def_master"`
 	DefSlaves    []MysqlBase `yaml:"def_slaves"`
@@ -28,6 +31,8 @@ type Mysql struct {
 	MaxIDleConns int         `yaml:"max_idle_conns"`
 	MaxOpenConns int         `yaml:"max_open_conns"`
 }
+
+// MysqlBase MysqlBase
 type MysqlBase struct {
 	Host     string `yaml:"host"`
 	Database string `yaml:"database"`

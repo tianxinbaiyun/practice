@@ -11,10 +11,12 @@ import (
 	"strconv"
 )
 
+// Book Book
 type Book struct {
 	handler.Base
 }
 
+// List List
 func (b *Book) List(c *gin.Context) {
 
 	cateID, _ := strconv.Atoi(c.DefaultQuery("cate_id", "0"))
@@ -75,6 +77,7 @@ func (b *Book) List(c *gin.Context) {
 	b.Success(c, msg)
 }
 
+// Info Info
 func (b *Book) Info(c *gin.Context) {
 	templeID, _ := strconv.Atoi(c.Param("temple_id"))
 	id, _ := strconv.Atoi(c.Param("id"))

@@ -27,7 +27,7 @@ POST /pay
 
 对应方法
 ```
-func (this *PayHandler) GetChinaumsPayURL(order *ordertype.OrderTypeHandler) (payURL string, rsp map[string]interface{}, err error) 
+func (c *PayHandler) GetChinaumsPayURL(order *ordertype.OrderTypeHandler) (payURL string, rsp map[string]interface{}, err error) 
 ```
 
 接口文档地址

@@ -12,7 +12,7 @@ func main() {
 	//PrintSort("asd")
 }
 
-// StringToInt
+// StringToInt StringToInt
 //问题1：实现一个函数stringToInt,实现把字符串转换成整数这个功能，
 //不能使用atoi或者其他类似的库函数。
 //注意各种异常边界
@@ -43,11 +43,12 @@ func StringToInt(str string) int {
 	return res
 }
 
-//问题2：输入一个字符串(字符都不一样)，
+//PrintSort 问题2：输入一个字符串(字符都不一样)，
 //打印出该字符串中字符的所有排列。
 //例如输入字符串abc。
 //则打印出由字符a、b、c
 //所能排列出来的所有字符串abc、acb、bac 、bca、cab 和cba
+// PrintSort PrintSort
 func PrintSort(str string) {
 	//strMap := make(map[int]string)
 	//sLen := len(str)

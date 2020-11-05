@@ -12,10 +12,10 @@ import (
 "fmt"
 )
 func main() {
-	defer_call()
+	deferCall()
 }
 
-func defer_call() {
+func deferCall() {
 
 	defer func() {
 		fmt.Println("打印前")
@@ -59,10 +59,10 @@ import (
 )
 
 func main() {
-	defer_call()
+	deferCall()
 }
 
-func defer_call() {
+func deferCall() {
 
 	defer func() {
 		fmt.Println("打印前")

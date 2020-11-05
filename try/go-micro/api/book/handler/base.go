@@ -36,9 +36,9 @@ var AppCodeMsg = map[int]string{
 
 // 定义
 const (
-	CurUid      = "cur_uid"
-	CurTempleId = "cur_temple_uid"
-	CurSupplyId = "cur_supply_id"
+	CurUID      = "cur_uid"
+	CurTempleID = "cur_temple_uid"
+	CurSupplyID = "cur_supply_id"
 	BizUser     = "biz_user"
 	TempleUser  = "temple_user"
 )
@@ -57,6 +57,7 @@ const (
 type Base struct {
 }
 
+// Success Success
 func (b *Base) Success(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, gin.H{
 		"code":    Success,
@@ -65,6 +66,7 @@ func (b *Base) Success(c *gin.Context, data interface{}) {
 	})
 }
 
+// Failure Failure
 func (b *Base) Failure(c *gin.Context, httpCode int, code int, message string, err error) {
 	if message == "" {
 		message = AppCodeMsg[code]

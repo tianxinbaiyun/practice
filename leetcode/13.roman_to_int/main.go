@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var input string = ""
+	var input string
 	input = "CMIX"
 	input = "MCMXCIV"
 	input = "XX"
