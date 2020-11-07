@@ -4,6 +4,7 @@ go 1.14
 
 require (
 	github.com/ClickHouse/clickhouse-go v1.4.3
+	github.com/Shopify/sarama v1.27.2
 	github.com/Workiva/go-datastructures v1.0.52
 	github.com/armon/circbuf v0.0.0-20190214190532-5111143e8da2 // indirect
 	github.com/armon/go-metrics v0.0.0-20190430140413-ec5e00d3c878 // indirect
@@ -37,9 +38,11 @@ require (
 	github.com/nats-io/nats-server/v2 v2.1.9 // indirect
 	github.com/prashantv/gostub v1.0.0
 	github.com/satori/go.uuid v1.2.0
+	github.com/segmentio/kafka-go v0.4.8
 	github.com/shopspring/decimal v1.2.0
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/streadway/amqp v1.0.0
+	github.com/stretchr/testify v1.6.1
 	github.com/tjfoc/gmsm v1.3.2
 	github.com/wayland3/hxing v0.2.5
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102

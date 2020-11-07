@@ -69,3 +69,4 @@ $ ./kafka-console-producer.sh --broker-list localhost:9092 --topic sun
 
 ### 进入kafka-manage管理
 
+kafka-manage管理参考：https://www.jianshu.com/p/6a592d558812
