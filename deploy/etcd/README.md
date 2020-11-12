@@ -1,0 +1,38 @@
+@[TOC]()
+# docker-compose 安装ETCD
+
+## 安装文档
+```
+version: '2.2'
+services:
+  etcd:
+    image: quay.io/coreos/etcd:v3.3.12
+    container_name: etcd-v3
+    ports:
+      - 2379:2379
+      - 2380:2380
+    environment:
+      ETCDCTL_API: 3
+    volumes:
+      - /Users/owenliu/lehui/data/etcd/etcd-data:/etcd-data
+    command:
+      - "/usr/local/bin/etcd"
+      - "--name"
+      - "s1"
+      - "--data-dir"
+      - "/etcd-data"
+      - "--advertise-client-urls"
+      - "http://0.0.0.0:2379"
+      - --listen-client-urls
+      - "http://0.0.0.0:2379"
+      - "--initial-advertise-peer-urls"
+      - "http://0.0.0.0:2380"
+      - "--listen-peer-urls"
+      - "http://0.0.0.0:2380"
+      - "--initial-cluster-token"
+      - "tkn"
+      - "--initial-cluster"
+      - "s1=http://0.0.0.0:2380"
+      - "--initial-cluster-state"
+      - "new"
+```
