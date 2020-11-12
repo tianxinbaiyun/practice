@@ -84,7 +84,7 @@ kubectl get secret -n kube-system
 
 获取token值
 ```
-kubectl describe secret dashboard-admin-token-tc5wk -n kube-system
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
 ```
 
 secret后面名称就是上图中红框的名称
