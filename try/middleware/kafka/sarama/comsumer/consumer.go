@@ -7,11 +7,13 @@ import (
 	"sync"
 )
 
+// KafkaConfig
 const (
 	KafkaConfig = "127.0.0.1:9092"
 	KafkaTopic  = "nginx_log"
 )
 
+// Consumer Consumer
 func Consumer() {
 	consumer, err := sarama.NewConsumer(strings.Split(KafkaConfig, ","), nil)
 	if err != nil {

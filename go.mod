@@ -11,13 +11,14 @@ require (
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/astaxie/beego v1.12.2
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/dimfeld/httptreemux v5.0.1+incompatible
+	github.com/dimfeld/httptreemux v5.0.1+incompatible // indirect
 	github.com/garyburd/redigo v1.6.2
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/go-xorm/xorm v0.7.9
 	github.com/golang/mock v1.4.4
 	github.com/golang/protobuf v1.4.3
+	github.com/google/martian v2.1.0+incompatible
 	github.com/google/uuid v1.1.2
 	github.com/hashicorp/consul/api v1.1.0 // indirect
 	github.com/hashicorp/go-immutable-radix v1.1.0 // indirect
@@ -44,7 +45,8 @@ require (
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.6.1
 	github.com/tjfoc/gmsm v1.3.2
-	github.com/wayland3/hxing v0.2.5
+	github.com/wayland3/hxing v0.2.5 // indirect
+	github.com/xs23933/fetch v1.2.6
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
 	google.golang.org/grpc v1.33.1
 	google.golang.org/grpc/examples v0.0.0-20201103233412-9a3c6618eeee // indirect

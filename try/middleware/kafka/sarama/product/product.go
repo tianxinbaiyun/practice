@@ -6,11 +6,13 @@ import (
 	"time"
 )
 
+// KafkaConfig
 const (
 	KafkaConfig = "127.0.0.1:9092"
 	KafkaTopic  = "nginx_log"
 )
 
+// Product Product
 func Product() {
 	config := sarama.NewConfig()
 	config.Producer.RequiredAcks = sarama.WaitForAll

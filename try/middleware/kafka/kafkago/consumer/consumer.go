@@ -49,6 +49,7 @@ func SimpleConsumer() (err error) {
 	return
 }
 
+// GetReader GetReader
 func GetReader() (err error) {
 	// make a new reader that consumes from topic-A, partition 0, at offset 42
 	r := kafka.NewReader(kafka.ReaderConfig{
@@ -77,6 +78,7 @@ func GetReader() (err error) {
 	return
 }
 
+// GroupConsumer GroupConsumer
 func GroupConsumer() (err error) {
 	// make a new reader that consumes from topic-A
 	r := kafka.NewReader(kafka.ReaderConfig{
