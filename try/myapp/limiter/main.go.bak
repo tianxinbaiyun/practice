@@ -1,0 +1,38 @@
+package main
+
+import (
+	"go.uber.org/ratelimit"
+	"log"
+	"sync"
+)
+
+func main() {
+	rl := ratelimit.New(1) // per second
+	wg := sync.WaitGroup{}
+	for i := 0; i < 10; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			aa(rl)
+		}()
+	}
+	wg.Wait()
+	// Output:
+	// 0 0
+	// 1 10ms
+	// 2 10ms
+	// 3 10ms
+	// 4 10ms
+	// 5 10ms
+	// 6 10ms
+	// 7 10ms
+	// 8 10ms
+	// 9 10ms
+}
+
+func aa(rl ratelimit.Limiter) {
+	for i := 0; i < 10; i++ {
+		now := rl.Take()
+		log.Println(now)
+	}
+}

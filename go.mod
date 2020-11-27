@@ -44,9 +44,11 @@ require (
 	github.com/smartystreets/goconvey v1.6.4
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.6.1
+	github.com/teambition/ratelimiter-go v1.0.1 // indirect
 	github.com/tjfoc/gmsm v1.3.2
 	github.com/wayland3/hxing v0.2.5 // indirect
 	github.com/xs23933/fetch v1.2.6
+	go.uber.org/ratelimit v0.0.0-20180316092928-c15da0234277
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
 	google.golang.org/grpc v1.33.1
 	google.golang.org/grpc/examples v0.0.0-20201103233412-9a3c6618eeee // indirect
