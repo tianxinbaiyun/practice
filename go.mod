@@ -3,7 +3,7 @@ module github.com/tianxinbaiyun/practice
 go 1.14
 
 require (
-	github.com/ClickHouse/clickhouse-go v1.4.3
+	github.com/ClickHouse/clickhouse-go v1.4.3 // indirect
 	github.com/Shopify/sarama v1.27.2
 	github.com/Workiva/go-datastructures v1.0.52
 	github.com/armon/circbuf v0.0.0-20190214190532-5111143e8da2 // indirect
@@ -22,7 +22,7 @@ require (
 	github.com/go-xorm/xorm v0.7.9
 	github.com/golang/mock v1.4.4
 	github.com/golang/protobuf v1.4.3
-	github.com/google/martian v2.1.0+incompatible
+	github.com/google/martian v2.1.0+incompatible // indirect
 	github.com/google/uuid v1.1.2
 	github.com/hashicorp/go-immutable-radix v1.1.0 // indirect
 	github.com/hashicorp/go-msgpack v0.5.5 // indirect
@@ -32,8 +32,8 @@ require (
 	github.com/hashicorp/go-version v1.2.0 // indirect
 	github.com/hashicorp/mdns v1.0.1 // indirect
 	github.com/hashicorp/serf v0.8.3 // indirect
-	github.com/influxdata/influxdb v1.8.3
-	github.com/jmoiron/sqlx v1.2.0
+	github.com/influxdata/influxdb v1.8.3 // indirect
+	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.2 // indirect
 	github.com/mennanov/limiters v0.0.2 // indirect
 	github.com/micro/cli v0.2.0
@@ -48,14 +48,17 @@ require (
 	github.com/streadway/amqp v1.0.0
 	github.com/stretchr/testify v1.6.1
 	github.com/teambition/ratelimiter-go v1.0.1
-	github.com/tjfoc/gmsm v1.3.2
+	github.com/tjfoc/gmsm v1.3.2 // indirect
+	//github.com/wayland3/hxing v0.2.5 // indirect#
 	github.com/xs23933/fetch v1.2.6
-	go.uber.org/ratelimit v0.0.0-20180316092928-c15da0234277
+	go.uber.org/ratelimit v0.0.0-20180316092928-c15da0234277 // indirect
 	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
 	google.golang.org/grpc v1.33.1
 	google.golang.org/grpc/examples v0.0.0-20201103233412-9a3c6618eeee // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/yaml.v2 v2.3.0
+	gorm.io/driver/mysql v1.0.3
+	gorm.io/gorm v1.20.8
 	gotest.tools v2.2.0+incompatible
 )
 
