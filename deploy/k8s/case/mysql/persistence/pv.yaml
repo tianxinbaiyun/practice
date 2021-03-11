@@ -13,6 +13,6 @@ spec:
     name: model-db-pv-claim
     namespace: default
   hostPath:
-    path: /Volumes/DATA/k8s/case/mysql/persistence/data
+    path: /Volumes/backup/k8s/mysql/persistence/data
   persistentVolumeReclaimPolicy: Retain
   volumeMode: Filesystem
