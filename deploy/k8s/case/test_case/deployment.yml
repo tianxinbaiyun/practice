@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deploy
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: test-cluster
+  template:
+    metadata:
+      labels:
+        app: test-cluster
+    spec:
+      containers:
+        - name: test-cluster
+          image: spa_credential_sync:v2.0.1
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 1
+              memory: 500Mi
+            limits:
+              cpu: 2
+              memory: 1024Mi
