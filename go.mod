@@ -3,6 +3,7 @@ module github.com/tianxinbaiyun/practice
 go 1.14
 
 require (
+	git.huixing.tech/comm/library v0.2.5 // indirect
 	github.com/ClickHouse/clickhouse-go v1.4.3 // indirect
 	github.com/Shopify/sarama v1.27.2
 	github.com/Workiva/go-datastructures v1.0.52
@@ -51,9 +52,10 @@ require (
 	github.com/tjfoc/gmsm v1.3.2 // indirect
 	//github.com/wayland3/hxing v0.2.5 // indirect#
 	github.com/xs23933/fetch v1.2.6
+	go.etcd.io/etcd/client/v3 v3.5.0-alpha.0
 	go.uber.org/ratelimit v0.0.0-20180316092928-c15da0234277 // indirect
-	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102
-	google.golang.org/grpc v1.33.1
+	golang.org/x/net v0.0.0-20210119194325-5f4716e94777
+	google.golang.org/grpc v1.35.0
 	google.golang.org/grpc/examples v0.0.0-20201103233412-9a3c6618eeee // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/yaml.v2 v2.3.0
